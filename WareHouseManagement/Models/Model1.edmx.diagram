@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7647375c6035480181c0caed1b42be72" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.Customer" Width="1.5" PointX="8.125" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.Input" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.InputInfo" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.Object" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.Output" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.OutputInfo" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.Supplier" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.Unit" Width="1.5" PointX="0.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.UserRole" Width="1.5" PointX="11" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoKTeamModel.User" Width="1.5" PointX="13.25" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__OutputInf__IdCus__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__InputInfo__IdInp__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__InputInfo__IdObj__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__Object__IdSuppli__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__Object__IdUnit__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__OutputInf__IdObj__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__OutputInfo__Id__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoKTeamModel.FK__Users__IdRole__5165187F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
