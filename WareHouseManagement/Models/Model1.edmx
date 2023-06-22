@@ -273,7 +273,7 @@
           </Key>
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdObject" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdInput" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateInput" Type="DateTime" Nullable="false" />
           <Property Name="Count" Type="Int32" />
           <Property Name="InputPrice" Type="Double" />
           <Property Name="OutputPrice" Type="Double" />
@@ -378,7 +378,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="InputInfo">
-              <PropertyRef Name="IdInput" />
+              <PropertyRef Name="DateInput" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -530,7 +530,7 @@
               <MappingFragment StoreEntitySet="InputInfo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdObject" ColumnName="IdObject" />
-                <ScalarProperty Name="IdInput" ColumnName="IdInput" />
+                <ScalarProperty Name="DateInput" ColumnName="IdInput" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="InputPrice" ColumnName="InputPrice" />
                 <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />

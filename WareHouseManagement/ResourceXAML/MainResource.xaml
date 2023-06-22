@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:WarehouseManagement.ResourceXAML"
     xmlns:viewmodel="clr-namespace:WarehouseManagement.ViewModel">
     <viewmodel:MainViewModel x:Key="MainVM" />
     <viewmodel:LoginViewModel x:Key="LoginVM" />
@@ -9,4 +8,5 @@
     <viewmodel:SupplierViewModel x:Key="SupplierVM" />
     <viewmodel:ObjectViewModel x:Key="ObjectVM" />
     <viewmodel:CustomerViewModel x:Key="CustomerVM" />
+    <viewmodel:InputViewModel x:Key="InputViewModel" />
 </ResourceDictionary>
