@@ -10,11 +10,11 @@ namespace WareHouseManagement.Models
     {
         private static DataProvider _instance;
         public static DataProvider Instance { get { if (_instance == null) _instance = new DataProvider(); return _instance; } set { _instance = value; } }
-        public QuanLyKhoKTeamEntities1 DB { get; set; }
+        public QuanLyKhoKTeamEntities DB { get; set; }
 
       private DataProvider()
         {
-            DB = new QuanLyKhoKTeamEntities1();
+            DB = new QuanLyKhoKTeamEntities();
         }
     }
 }

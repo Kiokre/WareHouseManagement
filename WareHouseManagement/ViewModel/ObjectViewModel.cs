@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using WareHouseManagement.Models;
 using System;
 using System.Linq;
@@ -104,7 +104,7 @@ namespace WarehouseManagement.ViewModel
         //Add new Object
         private void AddExecuted(object param)
         {
-            var Object = new Object() { DisplayName = DisplayName, QRCode = QRCode, BarCode = BarCode, IdSupplier = SelectedSupplier.Id, IdUnit = SelectedUnit.Id, Id = Guid.NewGuid().ToString() };
+            var Object = new Object() { DisplayName = DisplayName, QRCode = QRCode, BarCode = BarCode, IdSupplier = SelectedSupplier.Id, IdUnit = SelectedUnit.Id, Id = Guid.NewGuid().ToString()};
             DataProvider.Instance.DB.Objects.Add(Object);
             DataProvider.Instance.DB.SaveChanges();
             List.Add(Object);

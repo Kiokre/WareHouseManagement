@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WareHouseManagement.Models;
+using Object = WareHouseManagement.Models.Object;
 
 // ReSharper disable RedundantArgumentDefaultValue
 
@@ -8,32 +10,72 @@ namespace WarehouseManagement.ViewModel
 {
     public class InputViewModel : BaseViewModel
     {
-        private string objectDisplayName;
-        private DateTime dateInput;
+        private int objectDisplayName;
+        private DateTime? dateInput;
         private int count;
         private float priceInput;
         private float priceOutput;
         private string status;
+        private Object selectedObject;
+        private InputInfo selectItem;
+        private ObservableCollection<Object> objects;
+        private ObservableCollection<InputInfo> list;
 
         public InputViewModel()
         {
+            Objects = new ObservableCollection<Object>(DataProvider.Instance.DB.Objects);
+            List = new ObservableCollection<InputInfo>(DataProvider.Instance.DB.InputInfoes);
+            
             AddCommand = new RelayCommand(_ =>
             {
-                var input = new InputInfo
+                var input = new Input
                 {
-                    IdObject = ObjectDisplayName,
+                    Id = Guid.NewGuid().ToString(),
+                    DateInput = DateInput
+                };
+                DataProvider.Instance.DB.Inputs.Add(input);
+
+                var inputInfo = new InputInfo
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    IdObject = SelectedObject.Id,
+                    IdInput = input.Id,
                     Count = Count,
                     InputPrice = PriceInput,
                     OutputPrice = PriceOutput,
                     Status = Status
                 };
 
-                DataProvider.Instance.DB.InputInfoes.Add(input);
+                DataProvider.Instance.DB.InputInfoes.Add(inputInfo);
                 DataProvider.Instance.DB.SaveChanges();
+                List.Add(inputInfo);
             });
         }
 
-        public string ObjectDisplayName
+        
+        public ObservableCollection<Object> Objects { get => objects; set { objects = value; OnPropertyChanged(nameof(Objects)); } }
+        public ObservableCollection<InputInfo> List { get => list; set { list = value; OnPropertyChanged(nameof(List)); } }
+        public Object SelectedObject
+        {
+            get => selectedObject;
+            set
+            {
+                selectedObject = value;
+                OnPropertyChanged(nameof(SelectedObject));
+            }
+        }
+        
+        public InputInfo SelectItem
+        {
+            get => selectItem;
+            set
+            {
+                selectItem = value;
+                OnPropertyChanged();
+            }
+        }
+        
+        public int ObjectDisplayName
         {
             get => objectDisplayName;
             set
@@ -43,7 +85,7 @@ namespace WarehouseManagement.ViewModel
             }
         }
 
-        public DateTime DateInput
+        public DateTime? DateInput
         {
             get => dateInput;
             set
