@@ -9,4 +9,5 @@
     <viewmodel:ObjectViewModel x:Key="ObjectVM" />
     <viewmodel:CustomerViewModel x:Key="CustomerVM" />
     <viewmodel:InputViewModel x:Key="InputViewModel" />
+    <viewmodel:OutputViewModel x:Key="OutputViewModel" />
 </ResourceDictionary>

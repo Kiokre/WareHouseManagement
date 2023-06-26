@@ -13,7 +13,7 @@
     Width="600"
     Height="500"
     Background="{DynamicResource MaterialDesignPaper}"
-    DataContext="{StaticResource MainVM}"
+    DataContext="{StaticResource OutputViewModel}"
     FontFamily="{DynamicResource MaterialDesignFont}"
     ResizeMode="NoResize"
     TextElement.FontSize="13"
@@ -42,11 +42,14 @@
             <!--  Elements biding from selected items  -->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel>
-                    <TextBox
+                    <ComboBox
                         Margin="5,5,15,5"
                         materialDesign:HintAssist.Hint="Material Name"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        Text="{Binding ObjectDisplayName, UpdateSourceTrigger=PropertyChanged}" />
+                        DisplayMemberPath="DisplayName"
+                        IsEditable="True"
+                        ItemsSource="{Binding ObjectDisplayName}"
+                        SelectedItem="{Binding SelectedObject, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
                     <DatePicker
                         Width="100"
                         Margin="5,5,15,5"
@@ -66,6 +69,7 @@
                     <ComboBox
                         materialDesign:HintAssist.Hint="Customer"
                         IsEditable="True"
+                        DisplayMemberPath="DisplayName"
                         ItemsSource="{Binding Customer}"
                         SelectedItem="{Binding SelectedCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
